@@ -244,7 +244,7 @@ const Portfolio = () => {
             </p>
             <div className="mt-10">
               <a
-                href="/Faisal_Rehman_CV.pdf"
+                href="/Faisal rehman cv.pdf"
                 download
                 className="px-6 py-2 bg-yellow-400 text-black font-semibold rounded-md hover:bg-yellow-500"
               >
