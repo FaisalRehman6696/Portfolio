@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Colors */
+.text-gold {
+    color: #FFD700;
+  }
+  
+  .bg-gold {
+    background-color: #FFD700;
+  }
+  
+  /* Simple fade in animation using Tailwind */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  html {
+    scroll-behavior: smooth;
+  }
