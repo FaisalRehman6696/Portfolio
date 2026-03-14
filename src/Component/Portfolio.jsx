@@ -55,7 +55,7 @@ const Portfolio = () => {
         "service_qt6dqri",
         "template_uo27dir",
         e.target,
-        "2tGYEQKWoM4KnGaDG" // (or Public Key)
+        "2tGYEQKWoM4KnGaDG", // (or Public Key)
       )
       .then(
         (result) => {
@@ -65,7 +65,7 @@ const Portfolio = () => {
         },
         (error) => {
           console.error("Error:", error.text);
-        }
+        },
       );
   };
 
@@ -217,7 +217,7 @@ const Portfolio = () => {
           {/* Left: Image */}
           <div className="w-full md:w-1/2 flex justify-center">
             <img
-              src="/faisal2.png"
+              src="/faisalPhoto.png"
               alt="Faisal"
               className="w-80 h-80 md:w-[350px] md:h-[350px] rounded-2xl object-cover shadow-2xl border-4 border-indigo-500 hover:scale-105 transition-transform duration-300"
             />
@@ -244,7 +244,7 @@ const Portfolio = () => {
             </p>
             <div className="mt-10">
               <a
-                href="/Faisal rehman cv.pdf"
+                href="/Faisal rehman Associate.pdf"
                 download
                 className="px-6 py-2 bg-yellow-400 text-black font-semibold rounded-md hover:bg-yellow-500"
               >
@@ -308,11 +308,19 @@ const Portfolio = () => {
         <div className="grid md:grid-cols-3 gap-8 cursor-pointer">
           {[
             {
-              title: "E-commerce Store",
-              description: "MERN-based shopping site with payments.",
-              video: "/Ecommerce.mp4", // put in public/projects/
-              repo: "https://github.com/FaisalRehman6696/Ecommerce-website",
+              title: "Ecommerce-app",
+              description:
+                "MERN-based project Live on AWS which have user & admin role and Attached Stripe Account for testing.",
+              video: "/projectphoto.png",
+              repo: "http://13.60.217.156",
             },
+            {
+              title: "E-commerce Store",
+              description: "MERN-based Shopping site Live on Railway & Vercel.",
+              video: "/Ecommerce.mp4", // put in public/projects/
+              repo: "https://ecommerce-website-two-zeta.vercel.app",
+            },
+
             {
               title: "Ehsas hub",
               description:
@@ -330,17 +338,27 @@ const Portfolio = () => {
             <a
               key={idx}
               href={repo}
+              target="_blank"
               class="bg-gray-800 border border-purple-500 rounded-xl p-8 text-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
             >
-              <video
-                src={video}
-                className="w-full  object-cover "
-                muted
-                loop
-                preload="metadata"
-                onMouseOver={(e) => e.target.play()}
-                onMouseOut={(e) => e.target.pause()}
-              />
+              {video.endsWith(".mp4") ? (
+                <video
+                  src={video}
+                  className="w-full object-cover"
+                  muted
+                  loop
+                  preload="metadata"
+                  onMouseOver={(e) => e.target.play()}
+                  onMouseOut={(e) => e.target.pause()}
+                />
+              ) : (
+                <img
+                  src={video}
+                  className="w-full object-cover"
+                  alt={title}
+                />
+              )}
+
               <h3 class="text-xl font-bold">{title}</h3>
               <p className="text-gray-400">{description}</p>
             </a>
